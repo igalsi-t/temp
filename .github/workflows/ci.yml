@@ -12,5 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: jfrog/fly-action@v1
+        with:
+          fly-token: ${{ secrets.FLY_TOKEN }}
+
       - name: Run a simple test
         run: echo "Hello from CI"
